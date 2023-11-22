@@ -49,6 +49,7 @@ console.log(typeof c)
 // - За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками. та вивести в консоль
 let x= prompt('What is your name?')
 let y= prompt( 'What is your middle name')
-let z= prompt( 'What is your age')
+let z= +prompt( 'What is your age')
 let full = `${x} ${y} ${z}`
 console.log(full)
+console.log(typeof z)
