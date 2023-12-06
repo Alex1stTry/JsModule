@@ -182,7 +182,7 @@ if (card.cardSuit ==='spade'){
     accumulator.clubs.push(card)
 } return accumulator
 }, {spades: [], diamonds: [], hearts: [], clubs: []})
-console.log(reducedCards);
+console.log(reducedCards)
 
 // =========================
 //     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
