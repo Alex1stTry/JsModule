@@ -157,7 +157,7 @@ console.log(filteredReds)
 let filteredDiamond = cards.filter(value => value.cardSuit === 'diamond')
 console.log(filteredDiamond)
 // - всі трефи від 9 та більше
-let filtered = cards.filter(value => value.cardSuit === 'clubs' && value.value >= '9')
+let filtered = cards.filter(value => value.cardSuit === 'clubs' && ['9','10','jack','queen','king','ace'].includes(value.value))
 console.log(filtered)
 
 //
