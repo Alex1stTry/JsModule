@@ -79,29 +79,36 @@ function Car(model, manufacturer, year, maxSpeed, engine) {
     this.maxSpeed = maxSpeed;
     this.engine = engine;
     this.driver =
-    this.drive = function () {
-        console.log(`їдемо зі швидкістю ${maxSpeed} на годину`)
-    };
+        this.drive = function () {
+            console.log(`їдемо зі швидкістю ${maxSpeed} на годину`)
+        };
     this.info = function () {
         for (const fieldName in this) {
-            if (typeof(this[fieldName]) != "function")
-            console.log(`${fieldName} - ${this[fieldName]}`)
+            if (typeof (this[fieldName]) != "function")
+                console.log(`${fieldName} - ${this[fieldName]}`)
         }
 
     };
     // в інфо прям треба було подумати
-    this.increaseMaxSpeed = function(newSpeed) {
+    this.increaseMaxSpeed = function (newSpeed) {
         this.maxSpeed += newSpeed;
     };
     this.changeYear = function (newValue) {
         this.year = newValue;
     };
     this.addDriver = function (driver) {
-        this.driver = driver
+        if (typeof driver === 'object') {
+            for (const driverKey in driver) {
+                if (typeof (driver[driverKey])) {
+                    this.driver = driver
+                }
+            }
+        }
     };
 
 }
-let car = new Car('volkswagen','germany',2019,260,2.0)
+
+let car = new Car('volkswagen', 'germany', 2019, 260, 2.0)
 car.drive()
 console.log('__________')
 car.info()
@@ -128,10 +135,85 @@ car.info()
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-//
-//
-//
+class BMW {
+    constructor(model, manufacturer, year, maxSpeed, engine) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.engine = engine;
+    }
+
+    drive() {
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)
+    }
+
+    info() {
+        for (const argumentsKey in this) {
+            if (typeof (this[argumentsKey]) != "function") {
+                console.log(`${argumentsKey} - ${this[argumentsKey]}`)
+            }
+        }
+    }
+
+    increaseMaxSpeed(newSpeed) {
+        this.maxSpeed += newSpeed
+    }
+
+    changeYear(newValue) {
+        this.year = newValue
+    }
+}
+
+let bmw = new BMW('bmw', 'germany', 2020, 295, 4.4)
+console.log('__________')
+bmw.drive()
+console.log('__________')
+bmw.info()
+console.log('__________')
+bmw.increaseMaxSpeed(35)
+bmw.info()
+console.log('__________')
+bmw.changeYear(2022)
+bmw.info()
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+class Popelushka {
+
+    constructor(name, age, footSize) {
+        this.name = name;
+        this.age = age;
+        this.footSize = footSize;
+    }
+}
+
+class Prince {
+    constructor(name, age, shoeSize) {
+        this.name = name;
+        this.age = age;
+        this.shoeSize = shoeSize;
+    }
+}
+
+let prince = new Prince('kokos', 25, 37);
+let popel1 = new Popelushka('mandarinka', 22, 40);
+let popel2 = new Popelushka('apelsinka', 21, 39);
+let popel3 = new Popelushka('clubnika', 20, 36);
+let popel4 = new Popelushka('malinka', 23, 38);
+let popel5 = new Popelushka('alisa', 25, 37);
+let popel6 = new Popelushka('golybika', 19, 36);
+let popel7 = new Popelushka('egevika', 27, 39);
+let popel8 = new Popelushka('arbuziha', 35, 44);
+let popel9 = new Popelushka('dunya', 35, 44);
+let popel10 = new Popelushka('povariha', 35, 44);
+let arrOfPopel = []
+arrOfPopel.push(popel1, popel2, popel3, popel4, popel5, popel6, popel7, popel8, popel9, popel10)
+console.log(arrOfPopel)
+for (const arrOfPopelElement of arrOfPopel) {
+    if (arrOfPopelElement.footSize === prince.shoeSize) {
+        console.log(arrOfPopelElement.name)
+    }
+}
+console.log(arrOfPopel.find(popel => popel.footSize === prince.shoeSize));
