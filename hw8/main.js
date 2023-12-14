@@ -213,7 +213,7 @@ arrOfPopel.push(popel1, popel2, popel3, popel4, popel5, popel6, popel7, popel8, 
 console.log(arrOfPopel)
 for (const arrOfPopelElement of arrOfPopel) {
     if (arrOfPopelElement.footSize === prince.shoeSize) {
-        console.log(arrOfPopelElement.name)
+        console.log(arrOfPopelElement)
     }
 }
 console.log(arrOfPopel.find(popel => popel.footSize === prince.shoeSize));
