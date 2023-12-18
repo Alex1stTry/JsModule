@@ -78,7 +78,7 @@ function Car(model, manufacturer, year, maxSpeed, engine) {
     this.year = year;
     this.maxSpeed = maxSpeed;
     this.engine = engine;
-    this.driver =
+
         this.drive = function () {
             console.log(`їдемо зі швидкістю ${maxSpeed} на годину`)
         };
@@ -86,9 +86,13 @@ function Car(model, manufacturer, year, maxSpeed, engine) {
         for (const fieldName in this) {
             if (typeof (this[fieldName]) != "function")
                 console.log(`${fieldName} - ${this[fieldName]}`)
+
         }
 
     };
+    this.info2 = function () {
+        console.log('driver :', this.driver);
+    }
     // в інфо прям треба було подумати
     this.increaseMaxSpeed = function (newSpeed) {
         this.maxSpeed += newSpeed;
@@ -97,35 +101,25 @@ function Car(model, manufacturer, year, maxSpeed, engine) {
         this.year = newValue;
     };
     this.addDriver = function (driver) {
-        if (typeof driver === 'object') {
-            for (const driverKey in driver) {
-                if (typeof (driver[driverKey])) {
-                    this.driver = driver
-                }
-            }
-        }
+        this.driver = driver
     };
 
 }
 
 let car = new Car('volkswagen', 'germany', 2019, 260, 2.0)
-car.drive()
-console.log('__________')
-car.info()
-car.increaseMaxSpeed(20)
-console.log('__________')
-car.info()
-car.changeYear(2021)
-console.log('__________')
-car.info()
-console.log('__________')
-let myDriver = {
-    name: 'abrikos',
-    age: 29
-}
-car.addDriver(myDriver)
-
-car.info()
+car.drive();
+console.log('__________');
+car.info();
+car.increaseMaxSpeed(20);
+console.log('__________');
+car.info();
+car.changeYear(2021);
+console.log('__________');
+car.info();
+console.log('__________');
+car.addDriver({name: 'kokos', age: 25});
+car.info();
+car.info2()
 
 
 // - (Те саме, тільки через клас)
