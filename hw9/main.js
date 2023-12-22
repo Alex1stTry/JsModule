@@ -162,107 +162,102 @@ for (const simpson of simpsons) {
 //
 // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
 // Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом
- let coursesArray = [
-     {
-         title: 'JavaScript Complex',
-         monthDuration: 5,
-         hourDuration: 909,
-         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
-     },
-     {
-         title: 'Java Complex',
-         monthDuration: 6,
-         hourDuration: 909,
-         modules: ['html',
-             'css',
-             'js',
-             'mysql',
-             'mongodb',
-             'angular',
-             'aws',
-             'docker',
-             'git',
-             'java core',
-             'java advanced']
-     },
-     {
-         title: 'Python Complex',
-         monthDuration: 6,
-         hourDuration: 909,
-         modules: ['html',
-             'css',
-             'js',
-             'mysql',
-             'mongodb',
-             'angular',
-             'aws',
-             'docker',
-             'python core',
-             'python advanced']
-     },
-     {
-         title: 'QA Complex',
-         monthDuration: 4,
-         hourDuration: 909,
-         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
-     },
-     {
-         title: 'FullStack',
-         monthDuration: 7,
-         hourDuration: 909,
-         modules: ['html',
-             'css',
-             'js',
-             'mysql',
-             'mongodb',
-             'react',
-             'angular',
-             'aws',
-             'docker',
-             'git',
-             'node.js',
-             'python',
-             'java']
-     },
-     {
-         title: 'Frontend',
-         monthDuration: 4,
-         hourDuration: 909,
-         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
-     }
- ];
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
 let divMain = document.createElement('div')
 divMain.classList.add('divMain')
 
 for (const coursesArrayElement of coursesArray) {
-    let modules = coursesArrayElement.modules
-    for (const module of modules) {
-        let divModules = document.createElement('div')
-        let ulList = document.createElement('ul')
-        let liList = document.createElement('li')
-        liList.innerText= `${module}`
-        divModules.classList.add('modules')
-        ulList.append(liList)
-        divModules.append(ulList)
-        divMain.append(divModules)
-
-    }
     let divTitle = document.createElement('div')
     divTitle.classList.add('divTitle')
     divTitle.innerText = `${coursesArrayElement.title}`
 
-    let divMDuration= document.createElement('div')
+    let divMDuration = document.createElement('div')
     divMDuration.classList.add('divMDuration')
-    divMDuration.innerText = `${coursesArrayElement.monthDuration}`
+    divMDuration.innerText = `${coursesArrayElement.monthDuration} months`
 
-    let divHDuration= document.createElement('div')
+    let divHDuration = document.createElement('div')
     divHDuration.classList.add('divHDuration')
-    divHDuration.innerText = `${coursesArrayElement.hourDuration}`
+    divHDuration.innerText = `${coursesArrayElement.hourDuration} hours`
 
-
-
-
-    divMain.append(divTitle,divMDuration,divHDuration)
+    let modules = coursesArrayElement.modules
+    let ulList = document.createElement('ul')
+    for (const module of modules) {
+        let liList = document.createElement('li')
+        liList.innerText = `${module}`
+        ulList.append(liList)
+    }
+    let divModules = document.createElement('div')
+    divModules.classList.add('modules')
+    divModules.append(ulList)
+    divMain.append(divTitle, divMDuration, divHDuration, divModules)
 }
 document.body.append(divMain)
 
