@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        div{
+            width: 40vw;
+            height: 80vh;
+            background-color: darkgrey;
+            font-size: 22px;
+        }
+        .troywell-avia{
+            display: none
+        }
+        .troywell-caa{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+    // при кліку на посилання перехід на відповідну сторінку,
+    // на якій буде вся інформація про користувача (всі 15 полів)
+    // отримана через додатковий запит (https://jsonplaceholder.typicode.com/users/XXX   ХХХ - айді користувача)
+
+    let url = new URL(location.href)
+    let userId = url.searchParams.get('id')
+    console.log(JSON.parse(userId))
+    let parsedUser = JSON.parse(userId)
+
+
+    const divElement = document.createElement('div');
+    document.body.append(divElement)
+    divElement.innerHTML =`
+        <p>Id: ${parsedUser.id}</p>
+        <p>Name: ${parsedUser.name}</p>
+        <p>UserName: ${parsedUser.username}</p>
+        <p>UserEmail: ${parsedUser.email}</p>
+        <p>UserPhone: ${parsedUser.phone}</p>
+        <p>UserWeb: ${parsedUser.website}</p>
+        <p>UserStreet: ${parsedUser.address.street}</p>
+        <p>UserSuit: ${parsedUser.address.suite}</p>
+        <p>UserCity: ${parsedUser.address.city}</p>
+        <p>UserZipcode: ${parsedUser.address.zipcode}</p>
+        <p>UserGeoLat: ${parsedUser.address.geo.lat}</p>
+        <p>UserGeoLng: ${parsedUser.address.geo.lng}</p>
+        <p>UserCompanyName:${parsedUser.company.name}</p>
+        <p>UserCatchPhrase: ${parsedUser.company.catchPhrase}</p>
+        <p>UserCompanyBs: ${parsedUser.company.bs}</p>`
+</script>
+</body>
+</html>
