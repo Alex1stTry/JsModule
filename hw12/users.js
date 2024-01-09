@@ -13,7 +13,7 @@ fetch('http://jsonplaceholder.typicode.com/users ')
             liList.innerText = `${user.id} ${user.name}`
             const a = document.createElement('a')
             a.innerText = ' show information about this user'
-            a.href = `user-details.html?id=${user.id}` + JSON.stringify(user)
+            a.href = `user-details.html?id=` + JSON.stringify(user)
             a.style.textDecoration = 'none'
 
             liList.append(a)

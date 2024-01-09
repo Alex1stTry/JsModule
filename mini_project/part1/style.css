@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    background-color: gainsboro;
+    width: 50vw;
+    height: 200vh;
+    display: grid;
+    grid-template-columns:50% 50%;
+    gap: 10px;
+    justify-content: space-between;
+
+
+
+
+}
+
+.userDiv {
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: #efb604;
+    width: 20vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2vw;
+}
+h2{
+    font-size: 26px;
+}
+p{
+    font-size: 20px;
+
+}
+button{
+    height: 5vh;
+    width: 8vw;
+    font-size:22px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: coral;
+    transition: 1s;
+}
+button:hover{
+    height: 8vh;
+    width: 20vh;
+    font-size: 26px;
+    transition: 1s;
+}
