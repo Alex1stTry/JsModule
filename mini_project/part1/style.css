@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,45 +7,43 @@ body {
 
 .wrapper {
     background-color: gainsboro;
-    width: 50vw;
+
     height: 200vh;
     display: grid;
-    grid-template-columns:50% 50%;
-    gap: 10px;
-    justify-content: space-between;
-
-
-
-
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    justify-items: center;
+    width: 100%;
 }
 
 .userDiv {
     border: 2px solid black;
     border-radius: 25px;
     background-color: #efb604;
-    width: 20vw;
+    width: 40vw;
     height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 2vw;
+    margin: 1vw;
 }
 h2{
-    font-size: 26px;
+    font-size: 36px;
 }
 p{
-    font-size: 20px;
+    font-size: 32px;
 
 }
 button{
     height: 5vh;
-    width: 8vw;
-    font-size:22px;
+    width: 10vw;
+    font-size:20px;
     letter-spacing: 1px;
     cursor: pointer;
     background-color: coral;
     transition: 1s;
+    font-weight: bold;
 }
 button:hover{
     height: 8vh;
