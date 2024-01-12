@@ -17,17 +17,19 @@ fetch('https://jsonplaceholder.typicode.com/users')
             userDiv.classList.add('userDiv')
 
             let h2 = document.createElement('h2')
-            h2.innerText = user.name
+            h2.innerText = `Name: ${user.name}`
             h2.classList.add('userName')
 
             let p = document.createElement('p')
-            p.innerText = 'id:' + ' ' + user.id
+            p.innerText = `Id: ${user.id}`
             p.classList.add('userId')
 
             let btn = document.createElement('button')
             btn.innerText = 'Show details'
             btn.onclick = function () {
-                location.href = `../part2/user-details.html?userId=${user.id}` + JSON.stringify(user)}
+                location.href = `../part2/user-details.html?userId=${user.id}`
+            }
+
             userDiv.append(h2, p, btn)
             wrapper.appendChild(userDiv)
         }

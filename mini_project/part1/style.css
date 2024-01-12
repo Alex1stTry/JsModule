@@ -6,7 +6,7 @@ body {
 }
 
 .wrapper {
-    background-color: gainsboro;
+    background-color: wheat;
 
     height: 200vh;
     display: grid;
@@ -19,7 +19,7 @@ body {
 .userDiv {
     border: 2px solid black;
     border-radius: 25px;
-    background-color: #efb604;
+    background-color: rgba(143, 83, 14, 1);
     width: 40vw;
     height: 30vh;
     display: flex;
@@ -41,7 +41,7 @@ button{
     font-size:20px;
     letter-spacing: 1px;
     cursor: pointer;
-    background-color: coral;
+    background-color: rgba(72, 23, 9, 0.7);
     transition: 1s;
     font-weight: bold;
 }
@@ -50,4 +50,5 @@ button:hover{
     width: 20vh;
     font-size: 26px;
     transition: 1s;
+    color: cornflowerblue;
 }
