@@ -21,9 +21,8 @@ wrapper.classList.add('wrapper')
 //                 let p = document.createElement('p')
 //                 p.innerText = `${fieldName}:${(value[fieldName])}`
 //                 userBlock.appendChild(p)
-//                 console.log(typeof (value[fieldName]))
-//                 if (typeof (value[fieldName]) === {}) {
-//                     iterator(value[fieldName])
+//                 if (typeof (fieldName) === "object") {
+//                     iterator(fieldName)
 //                 }
 //             }
 //         }
@@ -48,7 +47,7 @@ wrapper.classList.add('wrapper')
 //         }
 //
 //     });
-//     теж не те щоб хотілось
+//      теж не те, щоб хотілось
 fetch(`https://jsonplaceholder.typicode.com/users/${user}`)
     .then(value => value.json())
     .then(value => {
@@ -72,6 +71,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user}`)
         <p>Company_catch_phrase: ${value.company.catchPhrase}</p>
         <p>Company_bs: ${value.company.bs}</p>
 `
+        divInfo.classList.add('divInfo')
         wrapper.appendChild(divInfo)
 
     })
@@ -112,7 +112,7 @@ btn.onclick = function () {
                     postWrapper.appendChild(div)
 
                     postBtn.onclick = function (){
-                        location.href =`../part3/post_details.html?postId=${post.id}`
+                        location.href =`../part3/post_details.html?postID=${post.id}`
                     }
                 }
                 document.body.appendChild(postWrapper)

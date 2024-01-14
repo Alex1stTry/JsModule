@@ -6,8 +6,8 @@ body {
 }
 
 .wrapper {
-    background-color: wheat;
-
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgb(110, 110, 110) 22%, rgba(112,64,8,1) 69%);
     height: 200vh;
     display: grid;
     grid-template-columns:1fr 1fr;
@@ -19,7 +19,8 @@ body {
 .userDiv {
     border: 2px solid black;
     border-radius: 25px;
-    background-color: rgba(143, 83, 14, 1);
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgb(159, 159, 159) 22%, rgb(143, 83, 14) 69%);
     width: 40vw;
     height: 30vh;
     display: flex;
@@ -50,5 +51,7 @@ button:hover{
     width: 20vh;
     font-size: 26px;
     transition: 1s;
-    color: cornflowerblue;
+    background-color: black;
+    color: saddlebrown;
+    border-radius: 25px;
 }
